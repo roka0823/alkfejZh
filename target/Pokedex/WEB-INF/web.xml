@@ -1,0 +1,25 @@
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <!--Adatbázis elérési út-->
+  <context-param>
+    <param-name>driver</param-name>
+    <param-value>jdbc:sqlite:C:\1.suli\6_felev\alfej1\Pokedex\src\main\resources\pokedex.db</param-value>
+  </context-param>
+
+
+  <!--
+    Ez egy megoldás a hibák kezelésére JSP környezetben. Itt megadhatsz egy servletet is a jsp oldal helyett, ilyenkor
+    a "location" értelemszerűen az a végpont, amiért a servlet felelős (amit a @WebServlet annotációba írtál!)
+
+    NOTE: ZH-ban elvárt a hibák legalább ilyen szintű kezelése!
+
+    lásd: https://www.javatpoint.com/exception-handling-in-jsp
+          https://stackoverflow.com/questions/26801038/how-to-redirect-to-error-page-when-exception-occurs-from-servlet
+  -->
+  <error-page>
+    <exception-type>java.lang.Throwable</exception-type>
+    <location>/errorpage.jsp</location>
+  </error-page>
+
+</web-app>
